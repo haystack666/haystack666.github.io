@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>关于梁易 - CS2 高手</title>
+    <style>
+        body {
+            font-family: 'Arial, sans-serif';
+            background-color: #f0f0f0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        .container {
+            text-align: center;
+            background: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            max-width: 800px;
+            margin: 20px;
+            box-sizing: border-box;
+        }
+
+        .title {
+            font-size: 2.5em;
+            color: #333;
+            animation: fadeIn 2s ease-in-out;
+        }
+
+        .description {
+            font-size: 1.2em;
+            color: #666;
+            margin-top: 10px;
+            animation: fadeIn 3s ease-in-out;
+        }
+
+        .profile-image {
+            width: 60%;
+            max-width: 180px;
+            height: auto;
+            margin-top: 20px;
+            border-radius: 24px; /* 变为圆角图片 */
+            animation: bounce 4s infinite;
+        }
+
+        .tab-bar {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+            animation: fadeIn 3.5s ease-in-out;
+        }
+
+        .tab {
+            padding: 10px 20px;
+            cursor: pointer;
+            background-color: #ddd;
+            margin: 0 5px;
+            border-radius: 4px;
+        }
+
+        .tab.active {
+            background-color: #333;
+            color: #fff;
+        }
+
+        .tab-content {
+            display: none;
+            margin-top: 20px;
+            animation: fadeIn 4s ease-in-out;
+        }
+
+        .tab-content.active {
+            display: block;
+        }
+
+        .extra-content-image {
+            width: 100%;
+            max-width: 600px;
+            height: auto;
+            margin-top: 20px;
+            border-radius: 24px; /* 变为圆角图片 */
+        }
+
+        .button {
+            margin-top: 20px;
+            padding: 10px 20px;
+            font-size: 1em;
+            color: #fff;
+            background-color: #333;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            animation: fadeIn 5s ease-in-out;
+        }
+
+        .button:hover {
+            background-color: #555;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% {
+                transform: translateY(0);
+            }
+            40% {
+                transform: translateY(-30px);
+            }
+            60% {
+                transform: translateY(-15px);
+            }
+        }
+
+        /* 移动端适配 */
+        @media (max-width: 600px) {
+            .title {
+                font-size: 2em;
+            }
+
+            .description {
+                font-size: 1em;
+            }
+
+            .button {
+                padding: 8px 16px;
+                font-size: 0.9em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 class="title">关于Ayisaci</h1>
+        <img src="./images/ayisaci2.jpg" alt="Ayisaci的图片" class="profile-image">
+        <p class="description">我是Ayisaci，CS2 高手。玩耍 CS2 让我感到快乐，我每天都在挑战自己，提升技能。</p>
+        
+        <div class="tab-bar">
+            <div class="tab active" onclick="showTab('tab1')">完美天梯</div>
+            <div class="tab" onclick="showTab('tab2')">Steam官匹</div>
+            <div class="tab" onclick="showTab('tab3')">未来计划</div>
+        </div>
+
+        <div id="tab1" class="tab-content active">
+            <div class="extra-content">
+                <img src="./images/sj1.png" alt="梁易的图片" class="extra-content-image">
+                <p>Ayisaci的完美平台最新数据，更新于：2024年5月20日</p>
+            </div>
+        </div>
+        <div id="tab2" class="tab-content">
+            <div class="extra-content">
+                <img src="./images/sj2.png" alt="梁易的图片" class="extra-content-image">
+                <p>Ayisaci的Steam官匹最新数据，更新于：2024年5月20日</p>
+            </div>
+        </div>
+        <div id="tab3" class="tab-content">
+            <div class="extra-content">
+                <p>我的偶像是<a href="https://www.hltv.org/player/8600/advent" target="_blank">Tyloo.Advent🇨🇳</a>，在未来，我希望能够参加更多的 CS2 比赛，展示我的实力，与更多的高手同台竞技。同时，我也愿意分享我的经验和技巧，帮助更多的玩家提升他们的游戏水平。</p>
+            </div>
+        </div>
+        
+        <button class="button" onclick="goBack()">返回</button>
+    </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            console.log("aboutme.html 已加载");
+        });
+
+        function goBack() {
+            window.history.back();
+        }
+
+        function showTab(tabId) {
+            var tabs = document.querySelectorAll('.tab');
+            var tabContents = document.querySelectorAll('.tab-content');
+
+            tabs.forEach(function(tab) {
+                tab.classList.remove('active');
+            });
+
+            tabContents.forEach(function(content) {
+                content.classList.remove('active');
+            });
+
+            document.getElementById(tabId).classList.add('active');
+            document.querySelector('.tab[onclick="showTab(\'' + tabId + '\')"]').classList.add('active');
+        }
+    </script>
+</body>
+</html>

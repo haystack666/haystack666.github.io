@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ayisaci - 新时代CS2高手</title>
+    <style>
+        body {
+            font-family: 'Arial, sans-serif';
+            background-color: #f0f0f0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        .container {
+            text-align: center;
+            background: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            max-width: 100%;
+            margin: 20px;
+            box-sizing: border-box;
+        }
+
+        .title {
+            font-size: 2.5em;
+            color: #333;
+            animation: fadeIn 2s ease-in-out;
+        }
+
+        .description {
+            font-size: 1.2em;
+            color: #666;
+            margin-top: 10px;
+            animation: fadeIn 3s ease-in-out;
+        }
+
+        .animated-image {
+            width: 100%;
+            max-width: 300px;
+            height: auto;
+            margin-top: 20px;
+            border-radius: 24px; /* 变为圆角图片 */
+            animation: bounce 4s infinite;
+        }
+
+        .extra-content {
+            margin-top: 20px;
+            animation: fadeIn 4s ease-in-out;
+        }
+
+        .button {
+            margin-top: 20px;
+            padding: 10px 20px;
+            font-size: 1em;
+            color: #fff;
+            background-color: #333;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            animation: fadeIn 5s ease-in-out;
+        }
+
+        .button:hover {
+            background-color: #555;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% {
+                transform: translateY(0);
+            }
+            40% {
+                transform: translateY(-30px);
+            }
+            60% {
+                transform: translateY(-15px);
+            }
+        }
+
+        /* 移动端适配 */
+        @media (max-width: 600px) {
+            .title {
+                font-size: 2em;
+            }
+
+            .description {
+                font-size: 1em;
+            }
+
+            .button {
+                padding: 8px 16px;
+                font-size: 0.9em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 class="title">我是CS2高手</h1>
+        <img src="./images/ayisaci1.jpg" alt="描述图片" class="animated-image">
+        <p class="description">我是Ayisaci，我是CS2高手，玩耍CS2让我感到快乐！！！！</p>
+        <div class="extra-content">
+            <p>我喜欢在每一天玩耍CS2，尤其是配上一杯生可乐。</p>
+            <p>每当我想要玩耍CS2时，我感觉我就像要飞起来一样</p>
+            <p>我的朋友们也觉得看我玩耍CS2是一种特别的享受。</p>
+        </div>
+        <button class="button" onclick="handleClick()">点击我，带你了解更多CS2高手的故事</button>
+    </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            console.log("网页已加载");
+        });
+
+        function handleClick() {
+            if (confirm('Ayisaci很开心，Ayisaci认为你也可以成为CS2高手！')) {
+                window.location.href = 'about.html';
+            } else {
+                alert('Ayisaci很失望，你真的不想成为CS2高手吗？');
+            }
+        }
+    </script>
+</body>
+</html>
